@@ -1,4 +1,4 @@
-package com.mylearning.springboot;
+package com.hackathon.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
