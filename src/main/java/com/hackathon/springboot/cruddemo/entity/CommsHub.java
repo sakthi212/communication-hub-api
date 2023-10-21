@@ -1,7 +1,5 @@
 package com.hackathon.springboot.cruddemo.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -169,6 +167,17 @@ public class CommsHub {
 
 	public void setSentimentRunDate(String sentimentRunDate) {
 		this.sentimentRunDate = sentimentRunDate;
+	}
+
+	@Override
+	public String toString() {
+		return "CommsHub [id=" + id + ", customerId=" + customerId + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", persona=" + persona + ", coverageName=" + coverageName + ", effectiveDate="
+				+ effectiveDate + ", lineOfBusiness=" + lineOfBusiness + ", channelType=" + channelType
+				+ ", communicationType=" + communicationType + ", communicationDirection=" + communicationDirection
+				+ ", communicationDate=" + communicationDate + ", communicationDescription=" + communicationDescription
+				+ ", communicationLink=" + communicationLink + ", sourceSystem=" + sourceSystem + ", sentiment="
+				+ sentiment + ", sentimentRunDate=" + sentimentRunDate + "]";
 	}
 
 }
