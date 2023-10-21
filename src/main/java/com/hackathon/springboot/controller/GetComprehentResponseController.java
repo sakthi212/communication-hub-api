@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageRequest;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageResult;
 import com.amazonaws.services.comprehend.model.DetectSentimentRequest;
 import com.amazonaws.services.comprehend.model.DetectSentimentResult;
-import com.hackathon.springboot.entity.ComprehendRequest;
-import com.hackathon.springboot.entity.ComprehendResponse;
+import com.hackathon.springboot.model.ComprehendRequest;
+import com.hackathon.springboot.model.ComprehendResponse;
 
 @RestController
 public class GetComprehentResponseController {
@@ -26,12 +27,12 @@ public class GetComprehentResponseController {
 
         // Create credentials using a provider chain. For more information, see
         // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
-        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
+       // AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
 
         AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
-                                         .withCredentials(awsCreds)
-                                         .withRegion("us-east-1")
+                                         .withCredentials(new InstanceProfileCredentialsProvider(false))
+                                      //   .withRegion("us-east-1")
                                          .build();
 
         // Call detectDominantLanguage API

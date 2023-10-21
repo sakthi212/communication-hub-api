@@ -1,4 +1,4 @@
-package com.hackathon.springboot.entity;
+package com.hackathon.springboot.model;
 
 public class ComprehendResponse {
 	private String sentiment;

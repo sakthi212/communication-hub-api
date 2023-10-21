@@ -21,7 +21,8 @@ INSERT INTO notice_details ( notice_summary, notice_details, notic_beg_dt, notic
 INSERT INTO notice_details ( notice_summary, notice_details, notic_beg_dt, notic_end_dt, create_dt, update_dt) VALUES ('COVID-19 Insurance', 'EazyBank launched an insurance policy which will cover COVID-19 expenses. Please reach out to the branch for more details',CURRENT_DATE - INTERVAL '30 days', CURRENT_DATE + INTERVAL '30 days', NOW(), null);
 INSERT INTO authorities (customer_id, name) VALUES (1, 'VIEWACCOUNT');
 INSERT INTO authorities (customer_id, name) VALUES (1, 'VIEWCARDS');
- INSERT INTO authorities (customer_id, name)  VALUES (1, 'VIEWLOANS');
- INSERT INTO authorities (customer_id, name)   VALUES (1, 'VIEWBALANCE');
- INSERT INTO authorities (customer_id, name)  VALUES (1, 'ROLE_USER');
- INSERT INTO authorities (customer_id, name)  VALUES (1, 'ROLE_ADMIN');
+INSERT INTO authorities (customer_id, name)  VALUES (1, 'VIEWLOANS');
+INSERT INTO authorities (customer_id, name)   VALUES (1, 'VIEWBALANCE');
+INSERT INTO authorities (customer_id, name)  VALUES (1, 'ROLE_USER');
+INSERT INTO authorities (customer_id, name)  VALUES (1, 'ROLE_ADMIN');
+INSERT INTO	public.comms_hub (comms_hub_id,	channel_type, communication_date,	communication_description,	communication_direction,	communication_link,	communication_type,	coverage_name,	customer_id,	effective_date,	first_name,	last_name,	line_of_business,	persona,	sentiment,	sentiment_run_date,	source_system)values(nextval('comms_hub_comms_hub_id_seq'::regclass),'Chat','09/19/2023','I would like to know details about annuity policy','InBound','http://guardianlife.com','Enquiry','Life Cover','287633529','08/09/2019','John','Smith','IM','Policy Holder','','','Client Portal');
